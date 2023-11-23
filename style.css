@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -13,57 +13,83 @@ body {
 header {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    justify-content: center;
+    margin-bottom: 35px;
 }
 
 header img {
-    height: 36px;
+    height: 60px;
     margin-right: 16px;
 }
 
 header h1 {
     font-size: 40px;
     font-weight: bold;
+    color: #434343;
 }
 
 .container {
-    max-width: 960px;
+    max-width: 998px;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #434343;
+    padding: 16px;
+    background-color: #B0C4DE;
+    align-items: center;
+    border-radius: 10px;
 }
 
 form {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.buttons {
     display: flex;
-    max-width: 640px;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 56px;
-}
-
-form input {
-    font-size: 24px;
-    background-color: #fff;
-    border: none;
-    border-bottom: 2px solid #000;
-    padding: 8px;
-}
-
-form input#nota-atividade {
-    width: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
 }
 
 form button {
-    background-color: #009432;
+    margin: 0 8px;
+    width: 320px;
+}
+
+form input {
+    font-size: 20px;
+    background-color: #e7e7e7;
+    border: 1px solid #434343;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+form input#phone {
+    width: 228px;
+}
+
+form input#name {
+    margin-left: 16px;
+}
+
+form input#email {
+    width: 228px;
+}
+
+form button {
+    background-color: #4682B4;
     color: #fff;
     font-size: 24px;
     font-weight: bold;
-    border: none;
+    border-radius: 10px;
     cursor: pointer;
     padding: 8px;
 }
 
 form button:hover {
-    background-color: #0f682c;
+    background-color: #708090;
 }
 
 table {
@@ -75,31 +101,37 @@ table th {
     padding: 16px;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
 }
 
 table td {
-    padding: 16px 0;
+    padding: 16px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-table td img {
-    height: 30px;
-}
-
-.resultado {
+.contato {
     padding: 8px;
     font-weight: bold;
-    color: #fff;
-    background-color: #000;
-    border-radius: 3px;
+    color: #000;
+    background-color: #e7e7e7;
 }
 
-.aprovado {
-    background-color: #009432;
+.contato:hover {
+    color: #434343;
 }
 
-.reprovado {
-    background-color: red;
+.direitos {
+    text-align: center;
+}
+
+.direitos a {
+    text-decoration: none;
+    color: black;
+}
+
+.direitos a:hover {
+    text-decoration: none;
+    color: #708090;
 }

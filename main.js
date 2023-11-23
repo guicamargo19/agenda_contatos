@@ -1,63 +1,61 @@
-const form = document.getElementById('form-atividade');
-const imgAprovado = "<img src='./images/aprovado.png' alt='Emoji celebrando'/>";
-const imgReprovado = "<img src='./images/reprovado.png' alt='Emoji decepcionado'/>";
-const atividades = [];
-const notas = [];
-const spanAprovado = '<span class="resultado aprovado">Aprovado</span>'
-const spanReprovado = '<span class="resultado reprovado">Reprovado</span>'
-const notaMinima = parseFloat(prompt("Digite a nota mínima: "));
+const form = document.getElementById('form-contato');
+const nomeCompleto = [];
+const telefones = [];
+const emails = [];
+const reset = document.getElementById("reset");
 
-let linhas = '';
+let contato = '';
+
+reset.addEventListener('click', function() {
+    if (contato.length >= 1) {
+        window.location.reload();
+    }
+});
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    adicionaLinha();
-    atualizaTabela();
-    atualizaMediaFinal();
+    adicionaContato();
+    NovaTabela();
 });
 
-function adicionaLinha() {
-    const inputNomeAtividade = document.getElementById('nome-atividade');
-    const inputNotaAtividade = document.getElementById('nota-atividade');
+function adicionaContato() {
+    const inputNome = document.getElementById('name');
+    const inputSobrenome = document.getElementById('lastname');
+    const inputTelefone = document.getElementById('phone');
+    const inputEmail = document.getElementById('email');
 
-    if (atividades.includes(inputNomeAtividade.value)) {
-        alert(`A atividade: ${inputNomeAtividade.value} já foi inserida.`);
+    let nomeMaisSobrenome = `${inputNome.value} ${inputSobrenome.value}`
+
+    if ((nomeCompleto.includes(nomeMaisSobrenome))) {
+        alert(`O contato: ${nomeMaisSobrenome} já existe na sua agenda.`);
+    } else if (telefones.includes(inputTelefone.value)) {
+        alert(`O telefone: ${inputTelefone.value} já existe na sua agenda.`);
+    } else if ((emails.includes(inputEmail.value))) {
+        alert(`O e-mail: ${inputEmail.value} já existe na sua agenda.`);
     } else {
-        atividades.push(inputNomeAtividade.value);
-        notas.push(parseFloat(inputNotaAtividade.value));
+        nomeCompleto.push(nomeMaisSobrenome);
+        telefones.push(inputTelefone.value);
+        emails.push(inputEmail.value);
 
-        let linha = '<tr>';
-        linha += `<td>${inputNomeAtividade.value}</td>`;
-        linha += `<td>${inputNotaAtividade.value}</td>`;
-        linha += `<td>${inputNotaAtividade.value >= notaMinima ? imgAprovado : imgReprovado}</td>`;
-        linha += '</tr>';
+        let line = '<tr class="contato">';
+        line += `<td>${inputNome.value}</td>`;
+        line += `<td>${inputSobrenome.value}</td>`;
+        line += `<td>${inputTelefone.value}</td>`;
+        line += `<td>${inputEmail.value}</td>`;
+        line += '</tr>';
 
-        linhas += linha
+        contato += line
     }
 
-    inputNomeAtividade.value = '';
-    inputNotaAtividade.value = '';
+    inputNome.value = '';
+    inputSobrenome.value = '';
+    inputTelefone.value = '';
+    inputEmail.value = '';
 }
 
-function atualizaTabela() {
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linhas;
+function NovaTabela() {
+    const agenda = document.querySelector('tbody');
+    agenda.innerHTML = contato;
 }
 
-function calculaMediaFinal() {
-    let somaNotas = 0;
-
-    for (let i = 0; i < notas.length; i++) {
-        somaNotas += notas[i]
-    }
-
-    return somaNotas / notas.length;
-}
-
-function atualizaMediaFinal() {
-    const mediaFinal = calculaMediaFinal();
-
-    document.getElementById('media-final-valor').innerHTML = mediaFinal.toFixed(2);
-    document.getElementById('media-final-resultado').innerHTML = mediaFinal >= notaMinima ? spanAprovado : spanReprovado;
-}
