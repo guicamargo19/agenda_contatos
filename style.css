@@ -41,6 +41,7 @@ header h1 {
 
 #form-contato {
     display: block;
+    width: 960px;
     max-width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -53,6 +54,7 @@ header h1 {
     align-items: center;
     border: none;
     padding: 8px;
+    margin: 8px;
 }
 
 #form-contato .inputs input {
