@@ -15,7 +15,7 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     adicionaContato();
-    NovaTabela();
+    novaTabela();
 });
 
 function adicionaContato() {
@@ -50,7 +50,7 @@ function adicionaContato() {
     }
 }
 
-function NovaTabela() {
+function novaTabela() {
     const agenda = document.querySelector('tbody');
     agenda.innerHTML = contato;
 }
