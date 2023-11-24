@@ -33,15 +33,19 @@ header h1 {
     width: 100%;
     margin: 0 auto;
     border: 1px solid #434343;
-    padding: 16px;
+    padding: 8px;
     background-color: #B0C4DE;
-    align-items: center;
     border-radius: 10px;
     display: block;
 }
+.teste {
+    display: inline-block;
+}
 
 #form-contato {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 960px;
     max-width: 100%;
     margin-bottom: 30px;
@@ -61,7 +65,6 @@ header h1 {
     border-radius: 8px;
     padding: 5px;
     border: 1px solid #434343;
-
 }
 
 .buttons {
