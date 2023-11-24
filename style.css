@@ -53,11 +53,13 @@ header h1 {
 
 #form-contato .inputs {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border: none;
     padding: 8px;
     margin: 8px;
+    margin-left: 24px;
+    max-width: 960px;
 }
 
 #form-contato .inputs input {
@@ -65,6 +67,8 @@ header h1 {
     border-radius: 8px;
     padding: 5px;
     border: 1px solid #434343;
+    width: 100%;
+    margin: 8px;
 }
 
 .buttons {
