@@ -37,14 +37,13 @@ header h1 {
     background-color: #B0C4DE;
     align-items: center;
     border-radius: 10px;
+    display: block;
 }
 
 #form-contato {
-    display: block;
+    display: inline-block;
     width: 960px;
     max-width: 100%;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 30px;
 }
 
