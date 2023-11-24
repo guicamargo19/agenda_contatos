@@ -29,9 +29,9 @@ header h1 {
 }
 
 .container {
-    max-width: 998px;
+    max-width: 1024px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 100px;
     border: 1px solid #434343;
     padding: 16px;
@@ -40,10 +40,18 @@ header h1 {
     border-radius: 10px;
 }
 
-form {
-    display: block;
+.form-contato {
+    display: flex;
     max-width: 100%;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.inputs {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons {
@@ -63,15 +71,19 @@ form input {
     background-color: #e7e7e7;
     border: 1px solid #434343;
     padding: 8px;
+    margin: 8px;
     border-radius: 10px;
 }
 
-form input#phone {
-    width: 228px;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
 }
 
-form input#name {
-    margin-left: 20px;
+
+form input#phone {
+    width: 228px;
 }
 
 form input#email {

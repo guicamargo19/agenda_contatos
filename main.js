@@ -1,5 +1,4 @@
 const form = document.getElementById('form-contato');
-const nomeCompleto = [];
 const telefones = [];
 const emails = [];
 const reset = document.getElementById("reset");
@@ -25,16 +24,13 @@ function adicionaContato() {
     const inputTelefone = document.getElementById('phone');
     const inputEmail = document.getElementById('email');
 
-    let nomeMaisSobrenome = `${inputNome.value} ${inputSobrenome.value}`
-
-    if ((nomeCompleto.includes(nomeMaisSobrenome))) {
-        alert(`O contato: ${nomeMaisSobrenome} já existe na sua agenda.`);
-    } else if (telefones.includes(inputTelefone.value)) {
+    if (telefones.includes(inputTelefone.value)) {
         alert(`O telefone: ${inputTelefone.value} já existe na sua agenda.`);
+        inputTelefone.value = '';
     } else if ((emails.includes(inputEmail.value))) {
         alert(`O e-mail: ${inputEmail.value} já existe na sua agenda.`);
+        inputEmail.value = '';
     } else {
-        nomeCompleto.push(nomeMaisSobrenome);
         telefones.push(inputTelefone.value);
         emails.push(inputEmail.value);
 
@@ -46,12 +42,12 @@ function adicionaContato() {
         line += '</tr>';
 
         contato += line
-    }
 
-    inputNome.value = '';
-    inputSobrenome.value = '';
-    inputTelefone.value = '';
-    inputEmail.value = '';
+        inputNome.value = '';
+        inputSobrenome.value = '';
+        inputTelefone.value = '';
+        inputEmail.value = '';
+    }
 }
 
 function NovaTabela() {

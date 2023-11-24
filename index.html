@@ -16,10 +16,12 @@
             <h1>Agenda</h1>
         </header>
         <form id="form-contato">
-            <input type="text" id="name" required placeholder="Nome" />
-            <input type="text" id="lastname" required placeholder="Sobrenome" />
-            <input type="tel" id="phone" required placeholder="Telefone" />
-            <input type="email" id="email" placeholder="E-mail (opcional)" />
+            <div class="inputs">
+                <input type="text" id="name" required placeholder="Nome" />
+                <input type="text" id="lastname" required placeholder="Sobrenome" />
+                <input type="number" id="phone" required placeholder="Telefone"/>
+                <input type="email" id="email" placeholder="E-mail (opcional)" />
+            </div>
             <div class="buttons">
                 <button type="submit">Adicionar contato</button>
                 <button type="reset">Limpar</button>
