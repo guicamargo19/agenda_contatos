@@ -2,6 +2,8 @@
 
 ## Apresentação do projeto
 
+https://github.com/guicamargo19/agenda_contatos/assets/133445061/ea16b11e-a906-4f2f-acce-aa7d3d993071
+
 Projeto desenvolvido no curso de Full Stack Python da EBAC - Escola Britânica de Artes Criativas e Tecnologia.
 
 Agenda de contatos desenvolvida em HTML5 e CSS3 com JavaScript.
