@@ -27,7 +27,7 @@ function adicionaContato() {
     if (telefones.includes(inputTelefone.value)) {
         alert(`O telefone: ${inputTelefone.value} já existe na sua agenda.`);
         inputTelefone.value = '';
-    } else if ((emails.includes(inputEmail.value))) {
+    } else if ((emails.includes(inputEmail.value) && inputEmail.value != '')) {
         alert(`O e-mail: ${inputEmail.value} já existe na sua agenda.`);
         inputEmail.value = '';
     } else {
